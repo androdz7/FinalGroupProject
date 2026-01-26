@@ -15,7 +15,9 @@ public class SignUpTest extends BaseTest {
     public void testValidSignUp() {
 
         HomePage homePage = new HomePage(DriverFactory.getDriver());
-        LoginSingUpPage loginSignUpPage = homePage.clickLoginRegisterButton();
+        Assert.assertTrue(homePage.isHomePageVisible(),
+                "\n HomePage Is Not Visible \n");
+        LoginSingUpPage loginSignUpPage = homePage.clickLoginSignupMenuItem();
 
         Assert.assertTrue(loginSignUpPage.isSignUpTitleVisible(),
                 "\n Sign Sign Up Title Is Not Visible \n");
@@ -53,9 +55,9 @@ public class SignUpTest extends BaseTest {
         homePage = accountCreatedPage.clickContinueButton();
         Assert.assertTrue(homePage.isLoggedInAsUsernameVisible(),
                 "\n Logged In As Username Is Not Visible \n");
-        String ExpectedLoggedInAsUserText = "Logged in as " + userName;
         String ActualLoggedInAsUserText = homePage.getLoggedInUsername();
+        String ExpectedLoggedInAsUserText = "Logged in as " + userName;
         Assert.assertEquals(ActualLoggedInAsUserText, ExpectedLoggedInAsUserText,
-                "\n Actual & Expected Username Does Not Match");
+                "\n Actual & Expected Username Do Not Match");
     }
 }

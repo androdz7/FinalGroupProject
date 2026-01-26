@@ -1,34 +1,64 @@
 package com.automationexercise.pages;
 
 import com.automationexercise.base.BasePage;
+import com.automationexercise.factory.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.AbstractCollection;
+
 public class LoginSingUpPage extends BasePage {
 
-    private By singupNameField = By.xpath("//section[@id='form']//input[@name='name']");
-    private By signupEmailField = By.xpath("//section[@id='form']//input[@name='name']/following::input[@name='email']");
+    private By singupNameInput = By.xpath("//section[@id='form']//input[@name='name']");
+    private By signupEmailInput = By.xpath("//section[@id='form']//input[@name='name']/following::input[@name='email']");
     private By signupButton = By.xpath("//section[@id='form']//button[text()='Signup']");
     private By signupTitle = By.xpath("//section[@id='form']//h2[text()='New User Signup!']");
-
-    public boolean isSignUpTitleVisible() {
-        return isDisplayed(signupTitle);
-    }
+    private By loginEmailInput = By.xpath("//section[@id='form']//input[@name='password']//preceding::input[@name='email']");
+    private By loginPsswordInput = By.xpath("//section[@id='form']//input[@name='password']");
+    private By loginButton = By.xpath("//section[@id='form']//button[text()='Login']");
+    private By loginTitle = By.xpath("//section[@id='form']//h2[text()='Login to your account']");
+    private By loginErrorMessage = By.xpath("//section[@id='form']//p[text()='Your email or password is incorrect!']");
 
     public LoginSingUpPage(WebDriver driver) {
         super(driver);
     }
 
+    public boolean isLoginTitleVisible() {
+        return isDisplayed(loginTitle);
+    }
+
+    public HomePage clickLoginButton() {
+        click(loginButton);
+        return new HomePage(driver);
+    }
+
+    public void enterLoginPassword(String password) {
+        type(loginPsswordInput, password);
+    }
+
+    public void enterLoginEmail(String email) {
+        type(loginEmailInput, email);
+    }
+
+    public boolean isSignUpTitleVisible() {
+        return isDisplayed(signupTitle);
+    }
+
     public void enterSignUpName(String name) {
-        type(singupNameField, name);
+        type(singupNameInput, name);
     }
 
     public void enterSignUpEmail(String email) {
-        type(signupEmailField, email);
+        type(signupEmailInput, email);
     }
 
     public RegistrationPage clickSignUpButton() {
         click(signupButton);
         return new RegistrationPage(driver);
     }
+
+    public boolean isLoginErrorMessageVisible() {
+        return isDisplayed(loginErrorMessage);
+    }
+
 }
