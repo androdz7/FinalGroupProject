@@ -65,6 +65,4 @@ public class BasePage {
         WebElement element = find(locator);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
-
-    //
 }

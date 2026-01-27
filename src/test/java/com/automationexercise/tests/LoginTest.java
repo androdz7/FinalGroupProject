@@ -1,15 +1,20 @@
 package com.automationexercise.tests;
 
+import com.automationexercise.base.BasePage;
 import com.automationexercise.base.BaseTest;
 import com.automationexercise.factory.DriverFactory;
 import com.automationexercise.pages.AccountDeletedPage;
 import com.automationexercise.pages.HomePage;
 import com.automationexercise.pages.LoginSingUpPage;
 import com.automationexercise.utils.ConfigReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
+
+    private static final Logger log = LoggerFactory.getLogger(LoginTest.class);
 
     @Test
     public void testValidLogin() {
@@ -59,5 +64,29 @@ public class LoginTest extends BaseTest {
 
         Assert.assertTrue(loginSingUpPage.isLoginErrorMessageVisible(),
                 "\n Login Error Message Is Not Visible \n");
+    }
+
+    @Test
+    public void testLogout() {
+
+        HomePage homePage = new HomePage(DriverFactory.getDriver());
+        Assert.assertTrue(homePage.isHomePageVisible(),
+                "\n HomePage Is Not Visible \n");
+
+        LoginSingUpPage loginSignUpPage = homePage.clickLoginSignupMenuItem();
+        Assert.assertTrue(loginSignUpPage.isLoginTitleVisible(),
+                "\n Login Title Is Not Visible \n");
+
+        loginSignUpPage.enterLoginEmail(ConfigReader.get("test.email"));
+        loginSignUpPage.enterLoginPassword(ConfigReader.get("test.password"));
+        homePage = loginSignUpPage.clickLoginButton();
+        Assert.assertTrue(homePage.isLoggedInAsUsernameVisible(),
+                "\n Logged In As Username Is Not Visible \n");
+        homePage.clickLogoutMenuItem();
+
+        String actualPageTitle = loginSignUpPage.getPageTitle();
+        String expectedPageTitle = "Automation Exercise - Signup / Login";
+        Assert.assertEquals(actualPageTitle, expectedPageTitle,
+                "\n Actual & Expected Page Titles Do Not Match \n");
     }
 }

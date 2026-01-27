@@ -61,4 +61,8 @@ public class LoginSingUpPage extends BasePage {
         return isDisplayed(loginErrorMessage);
     }
 
+    public String getPageTitle() {
+        return driver.getTitle();
+    }
+
 }

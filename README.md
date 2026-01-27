@@ -11,3 +11,4 @@
 - **TC01** `testValidSignUp`: Andro Dzamukashvili
 - **TC02** `testValidLogin`: Andro Dzamukashvili
 - **TC03** `testInvalidLogin`: Andro Dzamukashvili
+- **TC04** `testLogout`: Nikoloz Qvatadze
