@@ -55,9 +55,9 @@ public class SignUpTest extends BaseTest {
         homePage = accountCreatedPage.clickContinueButton();
         Assert.assertTrue(homePage.isLoggedInAsUsernameVisible(),
                 "\n Logged In As Username Is Not Visible \n");
-        String ActualLoggedInAsUserText = homePage.getLoggedInUsername();
-        String ExpectedLoggedInAsUserText = "Logged in as " + userName;
-        Assert.assertEquals(ActualLoggedInAsUserText, ExpectedLoggedInAsUserText,
+        String actualLoggedInAsUserText = homePage.getLoggedInUsername();
+        String expectedLoggedInAsUserText = "Logged in as " + userName;
+        Assert.assertEquals(actualLoggedInAsUserText, expectedLoggedInAsUserText,
                 "\n Actual & Expected Username Do Not Match");
     }
 }

@@ -37,9 +37,9 @@ public class LoginTest extends BaseTest {
         loginSignUpPage.enterLoginPassword(uniquePassword);
 
         homePage = loginSignUpPage.clickLoginButton();
-        String ActualLoggedInAsUserText = homePage.getLoggedInUsername();
-        String ExpectedLoggedInAsUserText = "Logged in as " + uniqueUsername;
-        Assert.assertEquals(ActualLoggedInAsUserText,ExpectedLoggedInAsUserText,
+        String actualLoggedInAsUserText = homePage.getLoggedInUsername();
+        String expectedLoggedInAsUserText = "Logged in as " + uniqueUsername;
+        Assert.assertEquals(actualLoggedInAsUserText, expectedLoggedInAsUserText,
                 "\n Actual & Expected Username Do Not Match  \n");
 
         AccountDeletedPage accountDeletedPage = homePage.clickDeleteAccountMenuItem();

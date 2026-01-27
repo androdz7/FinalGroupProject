@@ -12,3 +12,4 @@
 - **TC02** `testValidLogin`: Andro Dzamukashvili
 - **TC03** `testInvalidLogin`: Andro Dzamukashvili
 - **TC04** `testLogout`: Nikoloz Qvatadze
+- **TC05** `testTestCasesPageLoads`: Nikoloz Qvatadze

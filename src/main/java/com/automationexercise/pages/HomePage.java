@@ -9,6 +9,7 @@ public class HomePage extends BasePage {
 
     private By loginRegisterMenuItem = By.xpath("//header[@id='header']//a[text()=' Signup / Login']");
     private By deleteAccountMenuItem = By.xpath("//header[@id='header']//a[text()=' Delete Account']");
+    private By testCasesMenuItem = By.xpath("//header[@id='header']//a[text()=' Test Cases']");
     private By loggedInAsUserText = By.xpath("//header[@id='header']//a[text()=' Logged in as ']");
     private By logoutMenuItem = By.xpath("//header[@id='header']//a[text()=' Logout']");
     private By featuresItemsSection = By.cssSelector(".features_items");
@@ -71,5 +72,10 @@ public class HomePage extends BasePage {
         accountCreatedPage.clickContinueButton();
 
         clickLogoutMenuItem();
+    }
+
+    public TestCasesPage clickTestCasesMenuItem() {
+        clickJS(testCasesMenuItem);
+        return new TestCasesPage(driver);
     }
 }

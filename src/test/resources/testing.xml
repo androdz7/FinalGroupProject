@@ -4,6 +4,7 @@
         <classes>
             <class name="com.automationexercise.tests.LoginTest" />
             <class name="com.automationexercise.tests.SignUpTest" />
+            <class name="com.automationexercise.tests.TestCasesTest" />
         </classes>
     </test>
 </suite>
