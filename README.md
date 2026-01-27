@@ -13,3 +13,4 @@
 - **TC03** `testInvalidLogin`: Andro Dzamukashvili
 - **TC04** `testLogout`: Nikoloz Qvatadze
 - **TC05** `testTestCasesPageLoads`: Nikoloz Qvatadze
+- **TC06** `testInvalidSignUp`: Irakli Jojua

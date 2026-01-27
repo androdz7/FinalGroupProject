@@ -6,6 +6,7 @@ import com.automationexercise.pages.AccountCreatedPage;
 import com.automationexercise.pages.HomePage;
 import com.automationexercise.pages.LoginSingUpPage;
 import com.automationexercise.pages.RegistrationPage;
+import com.automationexercise.utils.ConfigReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,8 +18,8 @@ public class SignUpTest extends BaseTest {
         HomePage homePage = new HomePage(DriverFactory.getDriver());
         Assert.assertTrue(homePage.isHomePageVisible(),
                 "\n HomePage Is Not Visible \n");
-        LoginSingUpPage loginSignUpPage = homePage.clickLoginSignupMenuItem();
 
+        LoginSingUpPage loginSignUpPage = homePage.clickLoginSignupMenuItem();
         Assert.assertTrue(loginSignUpPage.isSignUpTitleVisible(),
                 "\n Sign Sign Up Title Is Not Visible \n");
 
@@ -59,5 +60,22 @@ public class SignUpTest extends BaseTest {
         String expectedLoggedInAsUserText = "Logged in as " + userName;
         Assert.assertEquals(actualLoggedInAsUserText, expectedLoggedInAsUserText,
                 "\n Actual & Expected Username Do Not Match");
+    }
+
+    @Test
+    public void testInvalidSignUp() {
+        HomePage homePage = new HomePage(DriverFactory.getDriver());
+        Assert.assertTrue(homePage.isHomePageVisible(),
+                "\n HomePage Is Not Visible \n");
+
+        LoginSingUpPage loginSignUpPage = homePage.clickLoginSignupMenuItem();
+        Assert.assertTrue(loginSignUpPage.isSignUpTitleVisible(),
+                "\n Sign Sign Up Title Is Not Visible \n");
+
+        loginSignUpPage.enterSignUpName(ConfigReader.get("test.username"));
+        loginSignUpPage.enterSignUpEmail(ConfigReader.get("test.email"));
+        loginSignUpPage.clickSignUpButton();
+        Assert.assertTrue(loginSignUpPage.isSignUpErrorMessageVisible(),
+                "\n Signup Error Message Is Not Visible \n");
     }
 }

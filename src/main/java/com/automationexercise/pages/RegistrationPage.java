@@ -118,7 +118,7 @@ public class RegistrationPage extends BasePage {
     }
 
     public void selectNewsletterCheckbox() {
-        click(newsletterCheckbox);
+        clickJS(newsletterCheckbox);
     }
 
     public void selectSpecialOfferCheckbox() {

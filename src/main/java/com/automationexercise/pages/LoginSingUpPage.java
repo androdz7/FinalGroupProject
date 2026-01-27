@@ -18,6 +18,7 @@ public class LoginSingUpPage extends BasePage {
     private By loginButton = By.xpath("//section[@id='form']//button[text()='Login']");
     private By loginTitle = By.xpath("//section[@id='form']//h2[text()='Login to your account']");
     private By loginErrorMessage = By.xpath("//section[@id='form']//p[text()='Your email or password is incorrect!']");
+    private By signupErrorMessage = By.xpath("//section[@id='form']//p[text()='Email Address already exist!']");
 
     public LoginSingUpPage(WebDriver driver) {
         super(driver);
@@ -28,7 +29,7 @@ public class LoginSingUpPage extends BasePage {
     }
 
     public HomePage clickLoginButton() {
-        click(loginButton);
+        clickJS(loginButton);
         return new HomePage(driver);
     }
 
@@ -63,6 +64,10 @@ public class LoginSingUpPage extends BasePage {
 
     public String getPageTitle() {
         return driver.getTitle();
+    }
+
+    public boolean isSignUpErrorMessageVisible() {
+        return isDisplayed(signupErrorMessage);
     }
 
 }
