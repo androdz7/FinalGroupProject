@@ -54,7 +54,8 @@ public class LoginSingUpPage extends BasePage {
     }
 
     public RegistrationPage clickSignUpButton() {
-        click(signupButton);
+        scrollToElementJS(signupButton);
+        clickJS(signupButton);
         return new RegistrationPage(driver);
     }
 

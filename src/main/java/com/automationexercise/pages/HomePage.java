@@ -9,6 +9,7 @@ public class HomePage extends BasePage {
 
     private By loginRegisterMenuItem = By.xpath("//header[@id='header']//a[text()=' Signup / Login']");
     private By deleteAccountMenuItem = By.xpath("//header[@id='header']//a[text()=' Delete Account']");
+    private By productsMenuItem = By.xpath("//header[@id='header']//a[text()=' Products']");
     private By testCasesMenuItem = By.xpath("//header[@id='header']//a[text()=' Test Cases']");
     private By loggedInAsUserText = By.xpath("//header[@id='header']//a[text()=' Logged in as ']");
     private By logoutMenuItem = By.xpath("//header[@id='header']//a[text()=' Logout']");
@@ -21,6 +22,12 @@ public class HomePage extends BasePage {
     public AccountDeletedPage clickDeleteAccountMenuItem() {
         clickJS(deleteAccountMenuItem);
         return new AccountDeletedPage(driver);
+    }
+
+    public ProductsPage clickProductsMenuItem() {
+        scrollToElementJS(productsMenuItem);
+        clickJS(productsMenuItem);
+        return new ProductsPage(driver);
     }
 
     public String getLoggedInUsername() {
