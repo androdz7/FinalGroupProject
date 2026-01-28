@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,10 +15,12 @@ public class BasePage {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
+    protected Actions actions;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(ConfigReader.get("explicitWait"))));
+        this.actions = new Actions(driver);
     }
 
     // ===== BASIC ACTIONS =====
@@ -51,6 +54,13 @@ public class BasePage {
         return find(locator).isEnabled();
     }
 
+    protected void hoverOver(By locator) {
+        WebElement element = find(locator);
+        actions.moveToElement(element)
+                .pause(Duration.ofMillis(500))
+                .perform();
+    }
+
     // ===== JAVASCRIPT ACTIONS =====
 
     protected void scrollToElementJS(By locator) {
@@ -62,7 +72,19 @@ public class BasePage {
     }
 
     protected void clickJS(By locator) {
-        WebElement element = find(locator);
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+    }
+
+    protected void hoverOverJS(By locator) {
+        WebElement element = find(locator);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].dispatchEvent(new MouseEvent('mouseover', {bubbles: true}));", element);
+    }
+
+    // ===== WAIT METHODS =====
+
+    public WebElement waitForElementToBeClickable(By locator) {
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 }

@@ -3,6 +3,7 @@ package com.automationexercise.pages;
 import com.automationexercise.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class CartPage extends BasePage {
 
@@ -14,6 +15,37 @@ public class CartPage extends BasePage {
 
     public CartPage(WebDriver driver) {
         super(driver);
+    }
+
+    private By getProductNameLocator(String product) {
+        return By.xpath("//table[@id='cart_info_table']/tbody/tr/td[@class='cart_description']//a[text()='" + product + "']");
+    }
+
+    private By getProductPriceLocator(String product) {
+        return By.xpath("//table[@id='cart_info_table']/tbody/tr[.//td[@class='cart_description']//a[text()='" + product + "']]/td[@class='cart_price']/p");
+    }
+
+    private By getProductQuantityLocator(String product) {
+        return By.xpath("//table[@id='cart_info_table']/tbody/tr[.//td[@class='cart_description']//a[text()='" + product + "']]/td[@class='cart_quantity']/button");
+    }
+
+    private By getProductTotalPriceLocator(String product) {
+        return By.xpath("//table[@id='cart_info_table']/tbody/tr[.//td[@class='cart_description']//a[text()='" + product + "']]/td[@class='cart_total']/p");
+    }
+
+    public String getProductPrice(String product) {
+        By locator = getProductPriceLocator(product);
+        return getText(locator);
+    }
+
+    public String getProductQuantity(String product) {
+        By locator = getProductQuantityLocator(product);
+        return getText(locator);
+    }
+
+    public String getProductTotalPrice(String product) {
+        By locator = getProductTotalPriceLocator(product);
+        return getText(locator);
     }
 
     public void scrollDownToFooter() {
@@ -36,4 +68,13 @@ public class CartPage extends BasePage {
         click(subscribeButton);
     }
 
+    public String getProductName(String product) {
+        By locator = getProductNameLocator(product);
+        return getText(locator);
+    }
+
+    public boolean isProductVisible(String product) {
+        By locator = getProductNameLocator(product);
+        return isDisplayed(locator);
+    }
 }
