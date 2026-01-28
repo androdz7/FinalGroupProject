@@ -9,6 +9,7 @@ public class HomePage extends BasePage {
 
     private By loginRegisterMenuItem = By.xpath("//header[@id='header']//a[text()=' Signup / Login']");
     private By deleteAccountMenuItem = By.xpath("//header[@id='header']//a[text()=' Delete Account']");
+    private By cartMenuItem = By.xpath("//header[@id='header']//a[text()=' Cart']");
     private By productsMenuItem = By.xpath("//header[@id='header']//a[text()=' Products']");
     private By testCasesMenuItem = By.xpath("//header[@id='header']//a[text()=' Test Cases']");
     private By loggedInAsUserText = By.xpath("//header[@id='header']//a[text()=' Logged in as ']");
@@ -33,6 +34,11 @@ public class HomePage extends BasePage {
         scrollToElementJS(productsMenuItem);
         clickJS(productsMenuItem);
         return new ProductsPage(driver);
+    }
+
+    public CartPage clickCartMenuItem() {
+        clickJS(cartMenuItem);
+        return new CartPage(driver);
     }
 
     public String getLoggedInUsername() {
@@ -103,7 +109,7 @@ public class HomePage extends BasePage {
         type(subscriptionEmailInput, email);
     }
 
-    public boolean isSubscriptionSuccessText() {
+    public boolean isSubscriptionSuccessTextVisible() {
         return isDisplayed(subscriptionSuccessText);
     }
 

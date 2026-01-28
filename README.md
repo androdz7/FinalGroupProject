@@ -15,4 +15,5 @@
 - **TC05** `testTestCasesPageLoads`: Nikoloz Qvatadze
 - **TC06** `testInvalidSignUp`: Irakli Jojua
 - **TC07** `testProductsDetails`: Irakli Jojua
-- **TC08** `testSubscriptionMessage`: Vaniko Ghatchavaq
+- **TC08** `testHomePageSubscriptionMessage`: Vaniko Ghatchava
+- **TC09** `testCartPageSubscriptionMessage`: Vaniko Ghatchava
