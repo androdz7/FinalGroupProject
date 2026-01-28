@@ -14,6 +14,11 @@ public class HomePage extends BasePage {
     private By loggedInAsUserText = By.xpath("//header[@id='header']//a[text()=' Logged in as ']");
     private By logoutMenuItem = By.xpath("//header[@id='header']//a[text()=' Logout']");
     private By featuresItemsSection = By.cssSelector(".features_items");
+    private By footer = By.id("footer");
+    private By subscriptionText = By.xpath("//footer//h2[text()='Subscription']");
+    private By subscriptionEmailInput = By.id("susbscribe_email");
+    private By subscriptionSuccessText = By.id("success-subscribe");
+    private By subscribeButton = By.id("subscribe");
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -84,5 +89,25 @@ public class HomePage extends BasePage {
     public TestCasesPage clickTestCasesMenuItem() {
         clickJS(testCasesMenuItem);
         return new TestCasesPage(driver);
+    }
+
+    public void scrollDownToFooter() {
+        scrollToElementJS(footer);
+    }
+
+    public String getSubscriptionText() {
+        return getText(subscriptionText);
+    }
+
+    public void enterSubscriptionEmail(String email) {
+        type(subscriptionEmailInput, email);
+    }
+
+    public boolean isSubscriptionSuccessText() {
+        return isDisplayed(subscriptionSuccessText);
+    }
+
+    public void clickSubscribeButton() {
+        click(subscribeButton);
     }
 }

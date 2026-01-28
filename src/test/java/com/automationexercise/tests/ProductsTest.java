@@ -23,7 +23,7 @@ public class ProductsTest extends BaseTest {
         Assert.assertEquals(actualPageTitle, expectedPageTitle,
                 "\n Actual & Expected Products Page Titles Do Not Match \n");
 
-        String product = "Men Tshirt";
+        String product = "Blue Top";
         ProductDetailsPage productDetailsPage = productsPage.clickProductViewButton(product);
         Assert.assertTrue(productDetailsPage.isProductNameVisible(product),
                 "Product's Name Is Not Visible");

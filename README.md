@@ -14,4 +14,5 @@
 - **TC04** `testLogout`: Nikoloz Qvatadze
 - **TC05** `testTestCasesPageLoads`: Nikoloz Qvatadze
 - **TC06** `testInvalidSignUp`: Irakli Jojua
-- **TC07** `testProductsDetails`: Irakli jojua
+- **TC07** `testProductsDetails`: Irakli Jojua
+- **TC08** `testSubscriptionMessage`: Vaniko Ghatchavaq
