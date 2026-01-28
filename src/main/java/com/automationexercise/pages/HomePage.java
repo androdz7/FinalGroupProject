@@ -59,7 +59,7 @@ public class HomePage extends BasePage {
     }
 
     public HomePage clickLogoutMenuItem() {
-        click(logoutMenuItem);
+        clickJS(logoutMenuItem);
         return this;
     }
 

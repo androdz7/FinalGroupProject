@@ -54,7 +54,7 @@ public class ProductsPage extends BasePage {
     }
 
     public CartPage clickViewCartButton() {
-        click(viewCartButton);
+        clickJS(viewCartButton);
         return new CartPage(driver);
     }
 }

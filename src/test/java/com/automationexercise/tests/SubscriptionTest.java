@@ -6,12 +6,17 @@ import com.automationexercise.factory.DriverFactory;
 import com.automationexercise.pages.CartPage;
 import com.automationexercise.pages.HomePage;
 import com.automationexercise.utils.ConfigReader;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@Epic("Marketing")
+@Feature("Newsletter Subscription")
 public class SubscriptionTest extends BaseTest {
 
     @Test
+    @Story("Verify home page subscription")
+    @Severity(SeverityLevel.MINOR)
     public void testHomePageSubscriptionMessage() {
 
         HomePage homePage = new HomePage(DriverFactory.getDriver());
@@ -30,6 +35,8 @@ public class SubscriptionTest extends BaseTest {
     }
 
     @Test
+    @Story("Verify cart page subscription")
+    @Severity(SeverityLevel.MINOR)
     public void testCartPageSubscriptionMessage() {
 
         HomePage homePage = new HomePage(DriverFactory.getDriver());

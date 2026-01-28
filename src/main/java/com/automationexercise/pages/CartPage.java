@@ -65,7 +65,7 @@ public class CartPage extends BasePage {
     }
 
     public void clickSubscribeButton() {
-        click(subscribeButton);
+        clickJS(subscribeButton);
     }
 
     public String getProductName(String product) {

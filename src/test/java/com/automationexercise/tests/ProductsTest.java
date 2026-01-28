@@ -6,13 +6,19 @@ import com.automationexercise.pages.CartPage;
 import com.automationexercise.pages.HomePage;
 import com.automationexercise.pages.ProductDetailsPage;
 import com.automationexercise.pages.ProductsPage;
+import io.qameta.allure.*;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@Epic("Product Management")
+@Feature("Products")
 public class ProductsTest extends BaseTest {
 
     @Test
+    @Story("View Product Details")
+    @Description("Verify product's details are visible")
+    @Severity(SeverityLevel.CRITICAL)
     public void testProductsDetails() {
         HomePage homePage= new HomePage(DriverFactory.getDriver());
         Assert.assertTrue(homePage.isHomePageVisible(),
@@ -41,6 +47,9 @@ public class ProductsTest extends BaseTest {
     }
 
     @Test
+    @Story("Add Products To Cart")
+    @Description("Verify that user's added products are correct")
+    @Severity(SeverityLevel.CRITICAL)
     public void testAddProductsInCart() {
         HomePage homePage= new HomePage(DriverFactory.getDriver());
         Assert.assertTrue(homePage.isHomePageVisible(),

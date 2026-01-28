@@ -7,16 +7,22 @@ import com.automationexercise.pages.AccountDeletedPage;
 import com.automationexercise.pages.HomePage;
 import com.automationexercise.pages.LoginSingUpPage;
 import com.automationexercise.utils.ConfigReader;
+import io.qameta.allure.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@Epic("Authentication")
+@Feature("Login")
 public class LoginTest extends BaseTest {
 
     private static final Logger log = LoggerFactory.getLogger(LoginTest.class);
 
     @Test
+    @Story("Valid user login")
+    @Description("Verify login User with correct email and password")
+    @Severity(SeverityLevel.CRITICAL)
     public void testValidLogin() {
 
         HomePage homePage = new HomePage(DriverFactory.getDriver());
@@ -48,6 +54,9 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    @Story("Invalid user login")
+    @Description("Verify Login User with incorrect email and password")
+    @Severity(SeverityLevel.CRITICAL)
     public void testInvalidLogin() {
 
         HomePage homePage= new HomePage(DriverFactory.getDriver());
@@ -67,6 +76,9 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    @Story("Verify user logout")
+    @Description("Verify User can logout")
+    @Severity(SeverityLevel.CRITICAL)
     public void testLogout() {
 
         HomePage homePage = new HomePage(DriverFactory.getDriver());

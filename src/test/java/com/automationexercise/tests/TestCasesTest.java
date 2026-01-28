@@ -4,12 +4,17 @@ import com.automationexercise.base.BaseTest;
 import com.automationexercise.factory.DriverFactory;
 import com.automationexercise.pages.HomePage;
 import com.automationexercise.pages.TestCasesPage;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@Epic("Content Management")
+@Feature("Test Cases Page")
 public class TestCasesTest extends BaseTest {
 
     @Test
+    @Story("Verify test case page loads")
+    @Severity(SeverityLevel.CRITICAL)
     public void testTestCasesPageLoads() throws InterruptedException {
 
         HomePage homePage = new HomePage(DriverFactory.getDriver());

@@ -7,12 +7,17 @@ import com.automationexercise.pages.HomePage;
 import com.automationexercise.pages.LoginSingUpPage;
 import com.automationexercise.pages.RegistrationPage;
 import com.automationexercise.utils.ConfigReader;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@Epic("User Management")
+@Feature("User Registration")
 public class SignUpTest extends BaseTest {
 
     @Test
+    @Story("Valid user signup")
+    @Severity(SeverityLevel.BLOCKER)
     public void testValidSignUp() {
 
         HomePage homePage = new HomePage(DriverFactory.getDriver());
@@ -63,6 +68,8 @@ public class SignUpTest extends BaseTest {
     }
 
     @Test
+    @Story("Invalid user signup")
+    @Severity(SeverityLevel.CRITICAL)
     public void testInvalidSignUp() {
         HomePage homePage = new HomePage(DriverFactory.getDriver());
         Assert.assertTrue(homePage.isHomePageVisible(),
