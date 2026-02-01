@@ -41,4 +41,20 @@ public class AutomationExerciseApiTests extends BaseApiTest {
         Assert.assertEquals(response.jsonPath().get("message"), "This request method is not supported.");
     }
 
+    @Test(priority = 5, description = "API 5: POST To Search Product")
+    public void testSearchProduct() {
+        ProductResponse searchData = apiService.searchProduct("tshirt")
+                .then().extract().as(ProductResponse.class);
+
+        Assert.assertEquals(searchData.getResponseCode(), 200);
+        Assert.assertTrue(searchData.getProducts().size() > 0);
+    }
+
+    @Test(priority = 6, description = "API 6: POST To Search Product without parameter")
+    public void testSearchProductNoParam() {
+        Response response = apiService.searchProductNoParam();
+        Assert.assertEquals(response.jsonPath().getInt("responseCode"), 400);
+        Assert.assertEquals(response.jsonPath().get("message"), "Bad request, search_product parameter is missing in POST request.");
+    }
+
 }

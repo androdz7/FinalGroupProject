@@ -25,3 +25,5 @@
 - **TC02** `testPostAllProducts`: Gega Gegetchkori
 - **TC03** `testGetAllBrands`: Vaniko Ghatchava
 - **TC04** `testPutAllBrands`: Vaniko Ghatchava
+- **TC05** `testSearchProduct`: Irakli Jojua
+- **TC06** `testSearchProductNoParam`: Irakli Jojua
