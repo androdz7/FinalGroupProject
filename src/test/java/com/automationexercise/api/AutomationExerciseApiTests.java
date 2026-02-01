@@ -74,4 +74,16 @@ public class AutomationExerciseApiTests extends BaseApiTest {
         Assert.assertEquals(response.jsonPath().getInt("responseCode"), 400);
     }
 
+    @Test(priority = 9, description = "API 9: DELETE To Verify Login")
+    public void testDeleteVerifyLogin() {
+        Response response = apiService.deleteVerifyLogin();
+        Assert.assertEquals(response.jsonPath().get("message"), "This request method is not supported.");
+    }
+
+    @Test(priority = 10, description = "API 10: POST To Verify Login with invalid details")
+    public void testVerifyLoginInvalid() {
+        Response response = apiService.verifyLogin("wrong_user_99@gmail.com", "wrongpass");
+        Assert.assertEquals(response.jsonPath().getInt("responseCode"), 404);
+        Assert.assertEquals(response.jsonPath().get("message"), "User not found!");
+    }
 }

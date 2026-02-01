@@ -29,3 +29,5 @@
 - **TC06** `testSearchProductNoParam`: Irakli Jojua
 - **TC07** `testVerifyLoginValid`: Nikoloz Qvatadze
 - **TC08** `testVerifyLoginNoEmail`: Nikoloz Qvatadze
+- **TC09** `testDeleteVerifyLogin`: Gega Gegetchkori
+- **TC10** `testVerifyLoginInvalid`: Gega Gegetchkori
