@@ -28,4 +28,17 @@ public class AutomationExerciseApiTests extends BaseApiTest {
         Assert.assertEquals(response.jsonPath().get("message"), "This request method is not supported.");
     }
 
+    @Test(priority = 3, description = "API 3: Get All Brands List")
+    public void testGetAllBrands() {
+        Response response = apiService.getAllBrands();
+        Assert.assertEquals(response.getStatusCode(), 200);
+        Assert.assertTrue(response.getBody().asString().contains("brands"));
+    }
+
+    @Test(priority = 4, description = "API 4: PUT To All Brands List")
+    public void testPutAllBrands() {
+        Response response = apiService.putAllBrands();
+        Assert.assertEquals(response.jsonPath().get("message"), "This request method is not supported.");
+    }
+
 }

@@ -23,3 +23,5 @@
 ### API
 - **TC01** `testGetAllProducts`: Gega Gegetchkori
 - **TC02** `testPostAllProducts`: Gega Gegetchkori
+- **TC03** `testGetAllBrands`: Vaniko Ghatchava
+- **TC04** `testPutAllBrands`: Vaniko Ghatchava
