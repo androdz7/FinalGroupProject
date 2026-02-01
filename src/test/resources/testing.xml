@@ -10,4 +10,10 @@
             <class name="com.automationexercise.ui.tests.SubscriptionTest" />
         </classes>
     </test>
+
+    <test name="API Tests">
+        <classes>
+            <class name="com.automationexercise.api.AutomationExerciseApiTests"/>
+        </classes>
+    </test>
 </suite>

@@ -18,3 +18,8 @@
 - **TC08** `testHomePageSubscriptionMessage`: Vaniko Ghatchava
 - **TC09** `testCartPageSubscriptionMessage`: Vaniko Ghatchava
 - **TC10** `testAddProductsInCart`: Gega Gegetchkori
+
+
+### API
+- **TC01** `testGetAllProducts`: Gega Gegetchkori
+- **TC02** `testPostAllProducts`: Gega Gegetchkori
