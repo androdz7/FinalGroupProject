@@ -57,4 +57,21 @@ public class AutomationExerciseApiTests extends BaseApiTest {
         Assert.assertEquals(response.jsonPath().get("message"), "Bad request, search_product parameter is missing in POST request.");
     }
 
+    @Test(priority = 7, description = "API 7: POST To Verify Login with valid details")
+    public void testVerifyLoginValid() {
+        Response response = apiService.verifyLogin(ConfigReader.get("test.email"), ConfigReader.get("test.password"));
+
+        Assert.assertEquals(response.getStatusCode(), 200);
+        String message = response.jsonPath().get("message");
+        Assert.assertEquals(message, "User exists!");
+    }
+
+    @Test(priority = 8, description = "API 8: POST To Verify Login without email")
+    public void testVerifyLoginNoEmail() {
+        Map<String, String> params = new HashMap<>();
+        params.put("password", "123456");
+        Response response = apiService.verifyLoginMissingParam(params);
+        Assert.assertEquals(response.jsonPath().getInt("responseCode"), 400);
+    }
+
 }
