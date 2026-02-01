@@ -5,6 +5,8 @@
 - Nikoloz Qvatadze (ნიკოლოზ ქვათაძე)
 - Vaniko Ghatchava (ვანიკო ღაჭავა)
 
+---
+
 ## Test Cases
 
 ### UI
@@ -31,3 +33,31 @@
 - **TC08** `testVerifyLoginNoEmail`: Nikoloz Qvatadze
 - **TC09** `testDeleteVerifyLogin`: Gega Gegetchkori
 - **TC10** `testVerifyLoginInvalid`: Gega Gegetchkori
+
+---
+
+## Architecture
+პროექტი იყენებს **Page Object Model (POM)** და **Service-Oriented** მიდგომას:
+
+* **`pages`**: UI ელემენტები და მეთოდები.
+* **`services`**: API ენდპოინტები და რექვესტები (ApiService).
+* **`models`**: POJO კლასები JSON-ის დესერიალიზაციისთვის.
+* **`utils`**: კონფიგურაციის წამკითხველი (ConfigReader).
+* **`endpoints`**: API მარშრუტების (Routes) ცენტრალიზებული შენახვა.
+
+---
+
+## Execution Steps
+
+პროექტის კლონირების შემდეგ მიჰყევით ამ ნაბიჯებს:
+
+### Prerequisites
+დარწმუნდით, რომ გაქვთ:
+* **JDK 11** ან უფრო ახალი (რეკომენდებულია OpenJDK).
+* **Maven** დაყენებული და დამატებული PATH-ში.
+* **Allure** (ვიზუალური რეპორტებისთვის).
+
+### Execution
+
+* ტესტის გასაშვებათ უნდა შეასრულოთ ყველა ზემოთ მოცემული პირობა, ამის შემდგომ შეგიძლიათ გადახვიდეთ testing.xml ფაილში და IDE-დან გაუშვათ ტესტი.
+* Allure-ის გამოსაყენებლად, ტესტის დამთავრების შემდეგ გამოიყენეთ კონსოლი და კომანდი: allure serve target/allure-results

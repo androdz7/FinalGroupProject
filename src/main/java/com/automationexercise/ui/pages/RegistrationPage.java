@@ -122,7 +122,7 @@ public class RegistrationPage extends BasePage {
     }
 
     public void selectSpecialOfferCheckbox() {
-        click(specialOfferCheckbox);
+        clickJS(specialOfferCheckbox);
     }
 
 }
