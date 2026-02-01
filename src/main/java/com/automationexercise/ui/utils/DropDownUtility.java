@@ -1,4 +1,4 @@
-package com.automationexercise.utils;
+package com.automationexercise.ui.utils;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;

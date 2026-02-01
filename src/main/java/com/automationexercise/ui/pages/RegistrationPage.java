@@ -1,11 +1,11 @@
-package com.automationexercise.pages;
+package com.automationexercise.ui.pages;
 
-import com.automationexercise.base.BasePage;
+import com.automationexercise.ui.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static com.automationexercise.utils.DropDownUtility.selectByVisibleText;
+import static com.automationexercise.ui.utils.DropDownUtility.selectByVisibleText;
 
 public class RegistrationPage extends BasePage {
 

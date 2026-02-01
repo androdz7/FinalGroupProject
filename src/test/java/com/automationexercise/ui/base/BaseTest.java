@@ -1,8 +1,7 @@
-package com.automationexercise.base;
+package com.automationexercise.ui.base;
 
-import com.automationexercise.factory.DriverFactory;
-import com.automationexercise.pages.HomePage;
-import com.automationexercise.utils.ConfigReader;
+import com.automationexercise.ui.factory.DriverFactory;
+import com.automationexercise.ui.utils.ConfigReader;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

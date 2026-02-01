@@ -1,6 +1,6 @@
-package com.automationexercise.base;
+package com.automationexercise.ui.base;
 
-import com.automationexercise.utils.ConfigReader;
+import com.automationexercise.ui.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

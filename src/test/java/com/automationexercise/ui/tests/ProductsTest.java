@@ -1,13 +1,12 @@
-package com.automationexercise.tests;
+package com.automationexercise.ui.tests;
 
-import com.automationexercise.base.BaseTest;
-import com.automationexercise.factory.DriverFactory;
-import com.automationexercise.pages.CartPage;
-import com.automationexercise.pages.HomePage;
-import com.automationexercise.pages.ProductDetailsPage;
-import com.automationexercise.pages.ProductsPage;
+import com.automationexercise.ui.base.BaseTest;
+import com.automationexercise.ui.factory.DriverFactory;
+import com.automationexercise.ui.pages.CartPage;
+import com.automationexercise.ui.pages.HomePage;
+import com.automationexercise.ui.pages.ProductDetailsPage;
+import com.automationexercise.ui.pages.ProductsPage;
 import io.qameta.allure.*;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

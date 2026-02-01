@@ -1,4 +1,4 @@
-package com.automationexercise.utils;
+package com.automationexercise.api.utils;
 
 import java.io.InputStream;
 import java.util.Properties;

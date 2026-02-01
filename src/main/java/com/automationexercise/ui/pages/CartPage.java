@@ -1,9 +1,8 @@
-package com.automationexercise.pages;
+package com.automationexercise.ui.pages;
 
-import com.automationexercise.base.BasePage;
+import com.automationexercise.ui.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 
 public class CartPage extends BasePage {
 

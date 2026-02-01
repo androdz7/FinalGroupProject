@@ -1,12 +1,11 @@
-package com.automationexercise.tests;
+package com.automationexercise.ui.tests;
 
-import com.automationexercise.base.BasePage;
-import com.automationexercise.base.BaseTest;
-import com.automationexercise.factory.DriverFactory;
-import com.automationexercise.pages.AccountDeletedPage;
-import com.automationexercise.pages.HomePage;
-import com.automationexercise.pages.LoginSingUpPage;
-import com.automationexercise.utils.ConfigReader;
+import com.automationexercise.ui.base.BaseTest;
+import com.automationexercise.ui.factory.DriverFactory;
+import com.automationexercise.ui.pages.AccountDeletedPage;
+import com.automationexercise.ui.pages.HomePage;
+import com.automationexercise.ui.pages.LoginSingUpPage;
+import com.automationexercise.ui.utils.ConfigReader;
 import io.qameta.allure.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
